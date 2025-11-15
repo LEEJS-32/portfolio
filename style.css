@@ -39,12 +39,18 @@ header nav ul li a{
 }
 
 
-div#home h1{
+/*========================== Home ==========================*/
+div#home {
+    height: 80vh;
+    position: relative;
+}
+
+div#home div.left h1{
     margin-top: 20px;
     font-size: 60px;
 }
 
-div#home p{
+div#home div.left p{
     margin-top: 18%;
     font-size: 30px;
 }
@@ -79,4 +85,87 @@ div#cv-and-about button:hover{
     border: #1643df 3px solid;
     cursor: pointer;
 }
+
+
+
+img.avatar {
+    width: 550px;
+    height: auto;
+    right: 0;
+    top: -35%;
+    position: absolute;
+}
+
+/*========================== About me ==========================*/
+div#about-me {
+    height: 100vh;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+div#about-me div.left {
+    flex-basis: 35%;
+}
+
+div#about-me div.left img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+div#about-me div.right {
+    flex-basis: 60%;
+}
+
+div#about-me div.right h1.title {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+
+/*========================== Skills ==========================*/
+div#skills, div#projects, div#contact {
+    margin-top: 0px;
+    height: 80vh;
+}
+
+div#skills h1, div#projects h1, div#contact h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+
+}
+
+div.skills-container { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+/*========================== Projects ==========================*/
+div.projects-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+/*========================== Contact ==========================*/
+div#contact {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+form#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
 

@@ -11,29 +11,109 @@
         <img src="img/logo.png" alt="logo.png" class="logo">
         <nav>
             <ul class="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div id="home">
-            <p>Full Stack Developer</p>
-            <h1>Hello, I'm Lee Jian Sheng</h1>
-            <div id="cv-and-about">
-                <button id="cv">Download CV</button>
-                <button id="about-me">About Me</button>
+            <div class="left">
+                <p>Full Stack Web Developer</p>
+                <h1>Hello, I'm Lee Jian Sheng</h1>
+                <div id="cv-and-about">
+                    <button id="cv">Download CV</button>
+                    <button id="about-me">About Me</button>
+                </div>
+            </div>
+                <img src="img/avatar1.png" alt="avatar1.png" class="avatar">
+        </div>
+
+        <div id="about-me">
+            <div class="left">
+                <img src="img/avatar.jpg" alt="avatar.jpg">
+            </div>
+            <div class="right">
+                <h1 class="title">About Me</h1>
+                <p class="subtitle">A Final Year Student who studied in Bachelor of Data Science in Tunku Abdul Rahman University of Management and Technology (TAR UMT).</p>
+            </div>
+
+        </div>
+
+        <div id="skills">
+            <h1>My Skills</h1>
+            <div class="skills-container">
+                <div class="skill">
+                    <img src="img/html.png" alt="html.png">
+                    <p>HTML</p>
+                </div>
+                <div class="skill">
+                    <img src="img/css.png" alt="css.png">
+                    <p>CSS</p>
+                </div>
+                <div class="skill">
+                    <img src="img/js.png" alt="js.png">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                    <img src="img/php.png" alt="php.png">
+                    <p>PHP</p>
+                </div>
+                <div class="skill">
+                    <img src="img/java.png" alt="java.png">
+                    <p>Java</p>
+                </div>
+                <div class="skill">
+                    <img src="img/Python.png" alt="Python.png">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="img/SQL.png" alt="SQL.png">
+                    <p>SQL</p>
+                </div>
             </div>
         </div>
-        <div id="about-me"></div>
-        <div id="projects"></div>
-        <div id="skills"></div>
-        <div id="contact"></div>
+
+        <div id="projects">
+            <h1>My Projects</h1>
+            <div class="projects-container">
+                <div class="project">  
+                    <img src="img/project1.png" alt="project1.png">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1.</p>
+                </div>
+                <div class="project">  
+                    <img src="img/project1.png" alt="project1.png">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1.</p>
+                </div>
+                <div class="project">  
+                    <img src="img/project1.png" alt="project1.png">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1.</p>
+                </div>
+            </div>
+        </div>
+
+        
     </main>
     <footer></footer>
+
+
+<script>
+    document.getElementById('cv').addEventListener('click', function () {
+        const link = document.createElement('a');
+        link.href = 'resume.pdf';      // <-- path to your CV file
+        link.download = 'resume.pdf';        // <-- file name when downloaded
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+</script>
+
+
 </body>
 </html>
