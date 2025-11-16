@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>My Portfolio</title>
 </head>
 <body>
@@ -26,84 +27,282 @@
                 <h1>Hello, I'm Lee Jian Sheng</h1>
                 <div id="cv-and-about">
                     <button id="cv">Download CV</button>
-                    <button id="about-me">About Me</button>
+                    <a href="#about-me" class="about-btn">About Me</a>
                 </div>
             </div>
                 <img src="img/avatar1.png" alt="avatar1.png" class="avatar">
         </div>
 
         <div id="about-me">
-            <div class="left">
-                <img src="img/avatar.jpg" alt="avatar.jpg">
-            </div>
-            <div class="right">
+            <div class="content">
                 <h1 class="title">About Me</h1>
-                <p class="subtitle">A Final Year Student who studied in Bachelor of Data Science in Tunku Abdul Rahman University of Management and Technology (TAR UMT).</p>
+                <p class="description">
+                    I'm a passionate Full Stack Web Developer with expertise in modern web technologies. 
+                    I love creating innovative solutions that solve real-world problems and provide 
+                    exceptional user experiences. With a strong foundation in both front-end and back-end 
+                    development, I enjoy working on challenging projects that push the boundaries of what's possible.
+                </p>
+                <div class="tabs">
+                    <p class="tab-links active-link" onclick="openTab('experience')">Experience</p>
+                    <p class="tab-links" onclick="openTab('education')">Education</p>
+                    <p class="tab-links" onclick="openTab('achievements')">Achievements</p>
+                </div>
+                <div class="tab-contents active-tab" id="experience">
+                    <ul>
+                        <li><span>2023 - 2024</span><br>Technical Support at Goodtech Computer</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2024 - Present</span><br>Bachelor's in Data Science</li>
+                        <li><span>2022 - 2024</span><br>Diploma in Data Science</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="achievements">
+                    <ul>
+                        <li><span>2025</span><br>President's List - 202501<br>Dean's List - 202505</li>
+                        <li><span>2024</span><br>President's List - Session 202409<br>Dean's List - Session 202405<br>Book Prize Award - Academic Achievement</li>
+                    </ul>
+                </div>
             </div>
-
         </div>
 
         <div id="skills">
             <h1>My Skills</h1>
             <div class="skills-container">
-                <div class="skill">
+                <div class="skill" data-skill="html" data-level="90">
                     <img src="img/html.png" alt="html.png">
                     <p>HTML</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
                 </div>
-                <div class="skill">
+                <div class="skill" data-skill="css" data-level="85">
                     <img src="img/css.png" alt="css.png">
                     <p>CSS</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <span class="skill-percentage">85%</span>
                 </div>
-                <div class="skill">
+                <div class="skill" data-skill="javascript" data-level="80">
                     <img src="img/js.png" alt="js.png">
                     <p>JavaScript</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80%"></div>
+                    </div>
+                    <span class="skill-percentage">80%</span>
                 </div>
-                <div class="skill">
+                <div class="skill" data-skill="php" data-level="70">
                     <img src="img/php.png" alt="php.png">
                     <p>PHP</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                    <span class="skill-percentage">70%</span>
                 </div>
-                <div class="skill">
+                <div class="skill" data-skill="java" data-level="75">
                     <img src="img/java.png" alt="java.png">
                     <p>Java</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75%"></div>
+                    </div>
+                    <span class="skill-percentage">75%</span>
                 </div>
-                <div class="skill">
+                <div class="skill" data-skill="python" data-level="65">
                     <img src="img/Python.png" alt="Python.png">
                     <p>Python</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="65%"></div>
+                    </div>
+                    <span class="skill-percentage">65%</span>
                 </div>
-                <div class="skill">
+                <div class="skill" data-skill="sql" data-level="80">
                     <img src="img/SQL.png" alt="SQL.png">
                     <p>SQL</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                    <span class="skill-percentage">70%</span>
                 </div>
             </div>
         </div>
 
         <div id="projects">
             <h1>My Projects</h1>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="datascience">Data Science</button>
+                <button class="filter-btn" data-filter="frontend">Front End</button>
+            </div>
             <div class="projects-container">
-                <div class="project">  
-                    <img src="img/project1.png" alt="project1.png">
-                    <h2>Project 1</h2>
-                    <p>Description of Project 1.</p>
+                <div class="project" data-category="fullstack">  
+                    <div class="project-overlay">
+                        <img src="img/furniture.jpg" alt="E-commerce Website">
+                        <div class="project-info">
+                            <h3>E-commerce Platform</h3>
+                            <p>A complete full-stack e-commerce solution with user authentication, payment processing, inventory management, and admin dashboard.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-primary">Live Demo</a>
+                                <a href="https://github.com/LEEJS-32/app" class="btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="project">  
-                    <img src="img/project1.png" alt="project1.png">
-                    <h2>Project 1</h2>
-                    <p>Description of Project 1.</p>
+                <div class="project" data-category="datascience">  
+                    <div class="project-overlay">
+                        <img src="img/project2.png" alt="Data Analytics Dashboard">
+                        <div class="project-info">
+                            <h3>Sales Analytics Dashboard</h3>
+                            <p>An interactive data visualization dashboard analyzing sales trends, customer behavior, and market insights using machine learning algorithms and statistical analysis.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Plotly</span>
+                                <span>Scikit-learn</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-primary">Live Demo</a>
+                                <a href="#" class="btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="project">  
-                    <img src="img/project1.png" alt="project1.png">
-                    <h2>Project 1</h2>
-                    <p>Description of Project 1.</p>
+                <div class="project" data-category="datascience">  
+                    <div class="project-overlay">
+                        <img src="img/project3.png" alt="Predictive Analytics Model">
+                        <div class="project-info">
+                            <h3>Customer Churn Prediction</h3>
+                            <p>A machine learning model that predicts customer churn using advanced algorithms. Includes data preprocessing, feature engineering, and model evaluation with 92% accuracy.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>NumPy</span>
+                                <span>Jupyter</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-primary">Live Demo</a>
+                                <a href="#" class="btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" data-category="fullstack">  
+                    <div class="project-overlay">
+                        <img src="img/project4.png" alt="Social Media Platform">
+                        <div class="project-info">
+                            <h3>Social Media Platform</h3>
+                            <p>A full-featured social media application with real-time messaging, post sharing, user profiles, and news feed. Built with modern full-stack technologies and deployed on cloud.</p>
+                            <div class="project-tech">
+                                <span>Vue.js</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>Socket.io</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-primary">Live Demo</a>
+                                <a href="#" class="btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" data-category="frontend">  
+                    <div class="project-overlay">
+                        <img src="img/portfolio.png" alt="Portfolio Website">
+                        <div class="project-info">
+                            <h3>Personal Portfolio Website</h3>
+                            <p>A responsive portfolio website showcasing web development skills with modern CSS, JavaScript animations, and interactive features. Built with clean design principles and optimized for performance.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Responsive Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-primary">Live Demo</a>
+                                <a href="https://github.com/LEEJS-32/portfolio" class="btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" data-category="frontend">  
+                    <div class="project-overlay">
+                        <img src="img/project6.png" alt="Car Purchasing Website">
+                        <div class="project-info">
+                            <h3>AutoDeal - Car Purchasing Website</h3>
+                            <p>A modern online car dealership website featuring car listings, detailed specifications, search filters, and responsive design. Built with clean HTML structure and advanced CSS styling techniques.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Flexbox</span>
+                                <span>Grid Layout</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-primary">Live Demo</a>
+                                <a href="#" class="btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Lee Jian Sheng</h3>
+                <p>Full Stack Web Developer passionate about creating innovative solutions and exceptional user experiences.</p>
+                <div class="social-links">
+                    <a href="https://github.com/LEEJS-32" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/jian-sheng-lee-7905b9354" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:jianshenglee32@email.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +60 16-569 3975</p>
+                    <p><i class="fas fa-envelope"></i> jianshenglee32@email.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kuala Lumpur, Malaysia</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lee Jian Sheng. All rights reserved.</p>
+        </div>
+    </footer>
 
 
 <script>
+    // CV Download functionality
     document.getElementById('cv').addEventListener('click', function () {
         const link = document.createElement('a');
         link.href = 'resume.pdf';      // <-- path to your CV file
@@ -111,6 +310,176 @@
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+    });
+
+    // About Me tab functionality
+    function openTab(tabName) {
+        const tabLinks = document.querySelectorAll('.tab-links');
+        const tabContents = document.querySelectorAll('.tab-contents');
+        
+        // Remove active classes
+        tabLinks.forEach(link => link.classList.remove('active-link'));
+        tabContents.forEach(content => content.classList.remove('active-tab'));
+        
+        // Add active class to clicked tab and corresponding content
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabName).classList.add('active-tab');
+    }
+
+    // Skills animation on scroll
+    function animateSkills() {
+        const skillsSection = document.getElementById('skills');
+        const skills = document.querySelectorAll('.skill');
+        const sectionTop = skillsSection.offsetTop;
+        const sectionHeight = skillsSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrollTop = window.pageYOffset;
+        
+        if (scrollTop > sectionTop - windowHeight + 200) {
+            skills.forEach((skill, index) => {
+                setTimeout(() => {
+                    skill.classList.add('animate');
+                    const progressBar = skill.querySelector('.skill-progress');
+                    const width = progressBar.getAttribute('data-width');
+                    progressBar.style.width = width;
+                }, index * 200);
+            });
+        }
+    }
+
+    // Project filter functionality
+    function filterProjects() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(button => button.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                projects.forEach(project => {
+                    if (filterValue === 'all' || project.getAttribute('data-category') === filterValue) {
+                        project.style.display = 'block';
+                        project.style.animation = 'fadeIn 0.5s ease-in-out';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
+    // Smooth scrolling for navigation
+    function smoothScroll() {
+        const navLinks = document.querySelectorAll('nav a, .about-btn');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active navigation
+                    updateActiveNav(targetId);
+                }
+            });
+        });
+    }
+
+    // Update active navigation item
+    function updateActiveNav(targetId) {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === targetId) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Highlight current section in navigation on scroll
+    function highlightCurrentSection() {
+        const sections = document.querySelectorAll('main > div[id]');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Intersection Observer for animations
+    function observeElements() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe skills and projects
+        const animatedElements = document.querySelectorAll('.skill, .project');
+        animatedElements.forEach(el => observer.observe(el));
+    }
+
+    // Initialize all functionality when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        filterProjects();
+        smoothScroll();
+        observeElements();
+        
+        // Animate skills on scroll and highlight navigation
+        window.addEventListener('scroll', () => {
+            animateSkills();
+            highlightCurrentSection();
+        });
+        
+        // Add typing effect to the main heading
+        const heading = document.querySelector('#home h1');
+        const text = heading.textContent;
+        heading.textContent = '';
+        
+        let i = 0;
+        const typingSpeed = 100;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                heading.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, typingSpeed);
+            }
+        }
+        
+        setTimeout(typeWriter, 1000);
+        
+        // Set initial active navigation
+        highlightCurrentSection();
     });
 </script>
 
